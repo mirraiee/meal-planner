@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'MealPlanner',
+                    'MealDiary',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
