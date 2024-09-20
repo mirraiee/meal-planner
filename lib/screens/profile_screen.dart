@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'editprofile.dart'; // Import the edit profile screen
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -8,7 +9,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  bool isDarkMode = false;
+  bool isDarkMode = false; // State variable for dark mode
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,13 +45,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
+          const SizedBox(height: 16),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EditProfileScreen()),
+                );
+              },
+              child: const Text('Edit Profile'),
+            ),
+          ),
           const SizedBox(height: 32),
           SwitchListTile(
             title: const Text('Dark Mode'),
-            value: isDarkMode,
+            value: isDarkMode, // Use the state variable
             onChanged: (bool value) {
               setState(() {
-                isDarkMode = value;
+                isDarkMode = value; // Toggle state without applying dark mode
               });
             },
           ),
